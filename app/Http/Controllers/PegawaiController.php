@@ -18,7 +18,7 @@ class PegawaiController extends Controller
                 $query->where('nama', 'like', "%{$keyword}%")
                       ->orWhere('email', 'like', "%{$keyword}%");
             })
-            ->paginate(10);
+            ->paginate(5);
 
         return view('pegawai.index', compact('data'));
     }
