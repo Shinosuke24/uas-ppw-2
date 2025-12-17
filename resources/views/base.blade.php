@@ -22,7 +22,7 @@
     <meta name="title" content="{{ config('app.name') }}">
     <meta name="description" content="Aplikasi ini merupakan proyek dasar Praktikum Pemrograman Web 2 di Universitas Gadjah Mada yang dirancang untuk mendukung proses pembelajaran mahasiswa dalam pengembangan aplikasi web.">
     <meta name="keywords" content="Praktikum Pemrograman Web 2, Universitas Gadjah Mada, proyek praktikum, aplikasi web, sistem informasi akademik, pembelajaran pemrograman, Laravel, pengembangan web, proyek mahasiswa"/>
-    <meta name="author" content="Abidurrahman Al-Faruq"/>
+    <meta name="author" content="Shinosuke Alexander Swandjaya"/>
 
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
@@ -44,15 +44,15 @@
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
     @stack('css')
 </head>
-<body role="main">
+<body class="min-h-screen flex flex-col" role="main">
 
 <nav class="bg-gray-100 border-b-4 border-[#C0392B]">
     <div class="max-w-screen-xl flex flex-wrap gap-3 items-center justify-between mx-auto p-4">
         <a href="#" class="flex items-center space-x-2 rtl:space-x-reverse">
             <img src="{{ asset('img/logo.png') }}" class="h-12" alt="Logo UGM"/>
             <div class="flex flex-col leading-tight">
-                <span class="text-lg md:text-xl font-bold text-[#631913]">NAMA SAYA</span>
-                <span class="text-xs md:text-sm font-semibold text-[#631913]">NIM SAYA</span>
+                <span class="text-lg md:text-xl font-bold text-[#631913]">Shinosuke Alexander Swandjaya</span>
+                <span class="text-xs md:text-sm font-semibold text-[#631913]">24/534826/SV/24095</span>
             </div>
         </a>
         <button id="menu-btn" type="button" class="inline-flex flex-none items-center p-1 justify-center text-sm text-gray-400 rounded-lg md:hidden hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-gray-600" aria-controls="navbar-default" aria-expanded="false">
@@ -69,15 +69,18 @@
                 <li>
                     <a href="{{ route('pekerjaan.index') }}" class="block py-2 px-3 md:p-0 transition-transform hover:scale-120 text-[#96291F] @yield('menupekerjaan')">Pekerjaan</a>
                 </li>
-                <li>
-                    <a href="#" class="block py-2 px-3 md:p-0 transition-transform hover:scale-120 text-[#96291F] @yield('menupegawai')">Pegawai</a>
-                </li>
+           <li>
+    <a href="{{ route('pegawai.index') }}" class="block py-2 px-3 md:p-0 transition-transform hover:scale-120 text-[#96291F] @yield('menupegawai')">Pegawai</a>
+</li>
+
             </ul>
         </div>
     </div>
 </nav>
 
-@yield('content')
+<main class="flex-1">
+    @yield('content')
+</main>
 
 <footer class="bg-gray-900 shadow-sm">
     <div class="w-full max-w-screen-xl mx-auto p-4 md:py-8">
@@ -108,9 +111,9 @@
                 <div>
                     <div class="text-white text-right">
                         <h2 class="mb-2 text-sm font-semibold uppercase">Identitas Mahasiswa</h2>
-                        <p>Nama Saya</p>
-                        <p>NIM Saya</p>
-                        <p>Kelas Praktikum</p>
+                        <p>Shinosuke Alexander Swandjaya</p>
+                        <p>24/534826/SV/24095</p>
+                        <p>A2</p>
                     </div>
                 </div>
             </div>

@@ -11,9 +11,9 @@ class PekerjaanController extends Controller
 {
     public function index(Request $request) {
         $keyword = $request->get('keyword');
-        $data = Pekerjaan::when($keyword, function ($query) use ($keyword) {
+        $data = Pekerjaan::withCount('pegawai')->when($keyword, function ($query) use ($keyword) {
             $query->where('nama', 'like', "%{$keyword}%")->orWhere('deskripsi', 'like', "%{$keyword}%");
-        })->get();
+        })->paginate(10);
         return view('pekerjaan.index', compact('data'));
     }
 
@@ -65,8 +65,15 @@ class PekerjaanController extends Controller
         }
     }
 
-    public function destroy(Request $request) {
-        Pekerjaan::findOrFail($request->id)->delete();
-        return redirect()->route('pekerjaan.index')->with('success', 'Data terhapus');
-    }
+   public function destroy(Request $request)
+{
+    $data = Pekerjaan::findOrFail($request->id);
+    $data->delete(); // Soft Delete
+
+    return redirect()
+        ->route('pekerjaan.index')
+        ->with('success', 'Data berhasil dihapus');
+}
+
+
 }
