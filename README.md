@@ -152,5 +152,8 @@ Total poin **tidak dibatasi 100**, namun **nilai akhir maksimal tetap 100**.
 * Semakin banyak task selesai dengan benar, semakin besar peluang nilai maksimal
 
 ---
+## Informasi Mahasiswa
+- Nama: Shino Alexander
+- UAS Praktikum Pemrograman Web 2
 
 Selamat mengerjakan dan semoga sukses 🚀
