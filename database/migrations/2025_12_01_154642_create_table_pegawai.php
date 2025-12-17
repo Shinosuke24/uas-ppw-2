@@ -11,9 +11,9 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('pegawai', function (Blueprint $table) {
+        Schema::create('shinosuke_534826ugm_pegawai', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('pekerjaan_id')->constrained('pekerjaan')->cascadeOnDelete();
+            $table->foreignId('pekerjaan_id')->constrained('shinosuke_534826ugm_pekerjaan')->cascadeOnDelete();
             $table->string('nama');
             $table->string('email')->unique();
             $table->enum('gender', ['male','female']);
